@@ -271,8 +271,8 @@ if __name__ == '__main__':
 
     if len(sys.argv) == 2:
         # запуск из командной строки
-        print('Разбираем ' + sys.argv[1])
-        convert_epf(sys.argv[1])
+        for fn in glob.glob(os.path.join('.', sys.argv[1])):
+            convert_epf(fn)
     else:
         # запуск из PyCharm - отладка
         os.chdir(r'c:\Git\onecDecoder')
